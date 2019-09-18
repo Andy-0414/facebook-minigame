@@ -1,6 +1,7 @@
 var cards = [...document.getElementById("game__cardField").children];
 var check = [];
 var round = 1;
+var isStart = false;
 
 function reset() {
 	location.reload();
@@ -32,6 +33,8 @@ function shuffleCard() {
 }
 
 function start() {
+	if (isStart) return;
+	isStart = true;
 	allHide();
 	for (let i = 1; i <= 3; i++)
 		setTimeout(() => {
